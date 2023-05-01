@@ -11,7 +11,7 @@ function Cuisine() {
 
     const getCuisine = async (name) => {
         const data = await fetch(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=9&cuisine=${name}`
         );
         const recipes = await data.json();
         setCuisine(recipes.results);
@@ -25,7 +25,7 @@ function Cuisine() {
 
     return (
         <Grid>
-        {cuisine.map((item) => {
+            {cuisine.map((item) => {
             return (
                 <Card key={item.id}>
                     <img src={item.image} alt="" />
