@@ -23,7 +23,8 @@ function Cuisine() {
     }, [params.type])
 
 
-    return <Grid>
+    return (
+        <Grid>
         {cuisine.map((item) => {
             return (
                 <Card key={item.id}>
@@ -32,7 +33,8 @@ function Cuisine() {
                 </Card>
             );
         })}
-    </Grid>;
+        </Grid>
+    );
 }
 
 const Grid = styled.div`
